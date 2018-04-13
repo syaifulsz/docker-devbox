@@ -7,7 +7,7 @@ services:
         ports:
             - "80:80"
         volumes:
-            - ../../pj-app:/var/www/pj-app
+            - ../..:/var/www
     devbox_mysql:
         container_name: devboxdb
         image: mariadb
