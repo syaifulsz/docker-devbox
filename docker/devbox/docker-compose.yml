@@ -2,7 +2,7 @@ version: '3'
 services:
     devbox:
         container_name: devbox
-        build: ./devbox
+        # build: ./devbox
         image: syaifulsz/devbox:0.0.2
         ports:
             - "80:80"
