@@ -1,1 +1,4 @@
 docker/data/mysql
+.bash_history
+!docker/devbox/nginx/confs/00.conf
+docker/devbox/nginx/confs/*

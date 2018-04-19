@@ -6,16 +6,17 @@ RUN apt-get update \
 && apt-get install -y apt-transport-https lsb-release ca-certificates wget curl \
 && wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
 && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list \
-&& apt-get update && apt-get -y upgrade
+&& apt-get update \
+&& apt-get -y upgrade \
 
 # tools
-RUN apt-get install -y vim zip unzip less wget curl apt-utils iputils-ping gnupg
+&& apt-get install -y vim zip unzip less wget curl apt-utils iputils-ping gnupg \
 
 # nginx
-RUN apt-get install -y nginx
+&& apt-get install -y nginx \
 
 # php
-RUN mkdir -p /run/php \
+&& mkdir -p /run/php \
 && apt-get install -y php7.1 \
 php7.1-fpm \
 php7.1-mysql \
@@ -30,13 +31,13 @@ php7.1-memcached \
 php7.1-mbstring \
 php7.1-zip \
 php7.1-xml \
-php7.1-gd
+php7.1-gd \
 
 # memcached
-RUN apt-get install -y memcached
+&& apt-get install -y memcached \
 
 # composer
-RUN curl -sS https://getcomposer.org/installer | php \
+&& curl -sS https://getcomposer.org/installer | php \
 && mv composer.phar /usr/local/bin/composer
 
 # define environment variable

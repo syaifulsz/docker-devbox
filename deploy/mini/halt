@@ -1,0 +1,16 @@
+#!/bin/sh
+
+. $(dirname "$0")/../init.sh
+
+clear
+DOCKER_DIR
+cd devbox/mini
+OCAK "$_OCAK_INTRO" "$_OCAK_OWN" "" "STOPPING CONTAINER:" ">> $APP_NAME" "" "GOOD BYE!"
+
+BR
+
+docker-compose down
+
+SLEEP2
+
+OCAK "COMMAND START CONTAINER:" "bash deploy/run"
