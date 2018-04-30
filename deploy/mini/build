@@ -1,0 +1,12 @@
+#!/bin/sh
+
+. $(dirname "$0")/../init.sh
+
+clear
+DOCKER_DIR
+cd devbox/mini
+OCAK "MINI DEVBOX (PHP ONLY)" "$_OCAK_INTRO" "$_OCAK_OWN" "" "BUILD CONTAINER:" ">> $APP_NAME"
+BR
+docker-compose build
+SLEEP1
+OCAK "COMMAND START CONTAINER:" "bash deploy/run"
