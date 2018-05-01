@@ -29,7 +29,7 @@ function DOCKER_DIR()
     PWD=`pwd`
     PST=`echo $PWD`
     CODE_DIR="$PST/"
-    DOCKER_DIR="$PST/docker"
+    DOCKER_DIR="$PST/docker/devbox"
     cd $DOCKER_DIR
 }
 
