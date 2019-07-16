@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # VARIABLES
-APP_NAME="DEVBOX"
-APP_CONTAINER="devbox"
+APP_NAME="web"
+APP_CONTAINER="web_dev"
 
-DB_NAME="DEVBOXDB"
-DB_CONTAINER="devboxdb"
+DB_NAME="db"
+DB_CONTAINER="db"
 
 TXT_C_RED=1
 TXT_C_GREEN=2
@@ -21,7 +21,7 @@ TXT_C_BGREEN=10
 TXT_BOLD="bold"
 
 _OCAK_INTRO="Docker Devbox"
-_OCAK_OWN="MAINTAINER: Syaiful Shah Zinan <ssz.planetjahit@gmail.com>"
+_OCAK_OWN="MAINTAINER: Syaiful Shah Zinan <i.works@live.com>"
 
 # FUNCTIONS
 function DOCKER_DIR()
@@ -29,7 +29,7 @@ function DOCKER_DIR()
     PWD=`pwd`
     PST=`echo $PWD`
     CODE_DIR="$PST/"
-    DOCKER_DIR="$PST/docker/devbox"
+    DOCKER_DIR="$PST/docker"
     cd $DOCKER_DIR
 }
 

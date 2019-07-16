@@ -1,0 +1,32 @@
+version: '3'
+services:
+    web_dev:
+        container_name: web_dev
+        build: .
+        ports:
+            - "7000:7000" # http://devbox.local:7000
+        volumes:
+            - ./../..:/var/www
+            - ./nginx/configs/00-devbox.conf:/etc/nginx/conf.d/00-devbox.conf
+            - ./nginx/conf-stacks:/etc/nginx/conf-stacks
+        links:
+            - memcached
+            - db
+
+    db:
+        container_name: db
+        image: mariadb
+        restart: always
+        ports:
+            - "7100:3306"
+        volumes:
+            - ./data/mysql:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+
+    memcached:
+        container_name: memcached
+        image: memcached
+        restart: always
+        ports:
+            - "11711:11211"

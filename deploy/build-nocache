@@ -10,4 +10,4 @@ OCAK "COMMAND STOP CONTAINER:" "command + c / ctrl + c"
 BR
 OCAK "STARTING NOW:"
 SLEEP2
-docker-compose build
+docker-compose build --no-cache

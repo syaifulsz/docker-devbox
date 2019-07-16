@@ -1,9 +1,0 @@
-#!/bin/sh
-
-. $(dirname "$0")/../init.sh
-
-clear
-OCAK "$_OCAK_INTRO" "$_OCAK_OWN" "" "RUN COMMAND TO CONTAINER:" ">> $APP_NAME" "service nginx restart"
-BR
-
-docker exec -it $APP_CONTAINER nginx -s reload
