@@ -1,6 +1,5 @@
 !docker/data/.gitkeep
 docker/data/mysql/*
-docker/devbox/data/mysql/*
+docker/data/mongodb/*
+docker/nginx/configs/*
 .bash_history
-!docker/devbox/nginx/confs/00.conf
-docker/devbox/nginx/confs/*
