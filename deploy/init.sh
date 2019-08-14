@@ -2,7 +2,7 @@
 
 # VARIABLES
 APP_NAME="web"
-APP_CONTAINER="web_dev"
+APP_CONTAINER="devbox_php_nginx"
 
 DB_NAME="db"
 DB_CONTAINER="db"

@@ -42,27 +42,16 @@ RUN curl -sS https://getcomposer.org/installer | php \
 && mv composer.phar /usr/local/bin/composer
 
 # define environment variable
-ENV NAME mini_b_web
-ENV HOME /var/www/mjiimms
+ENV NAME devbox
+ENV HOME /var/www/docker-devbox
 WORKDIR $HOME
 
 # setup docker requirement data
 # nginx
 COPY    ./nginx/conf-stacks             /etc/nginx/conf-stacks
-
-# php
-COPY    ./php/00-php.ini                /etc/php/7.2/fpm/conf.d/00-php.ini
-
-VOLUME  ./../../mjiimms                 /var/www/mjiimms
+VOLUME  ./../../docker-devbox           /var/www/docker-devbox
 
 # setup ports
-# EXPOSE 7000
+EXPOSE 7000
 
 CMD service php7.2-fpm restart && service memcached restart && nginx -g "daemon off;"
-# CMD /etc/init.d/apache2 stop && service php7.2-fpm restart && service memcached restart && nginx -g "daemon off;"
-# CMD nginx -g "daemon off;"
-
-# setup entrypoint script
-# COPY docker-entrypoint.sh /usr/bin
-# RUN chmod +x /usr/bin/docker-entrypoint.sh
-# ENTRYPOINT ["docker-entrypoint.sh"]

@@ -1,7 +1,7 @@
 version: '3'
 services:
-    web_dev:
-        container_name: web_dev
+    devbox_php_nginx:
+        container_name: devbox_php_nginx
         build: .
         ports:
             - "7000:7000" # http://devbox.local:7000
@@ -10,6 +10,7 @@ services:
             - ./nginx/00-devbox.conf:/etc/nginx/conf.d/00-devbox.conf
             - ./nginx/configs:/etc/nginx/sites-enabled
             - ./nginx/conf-stacks:/etc/nginx/conf-stacks
+            - ./php/00-php.ini:/etc/php/7.2/fpm/conf.d/00-php.ini
         # links:
         #     - memcached
         #     - db
